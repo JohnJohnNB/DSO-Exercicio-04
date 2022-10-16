@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+body{
+    background-color: gray;
+}
+
 * {
     margin: 0 auto;
     padding: 0;
@@ -36,4 +40,10 @@
 #menu-h ul li:last-child a {
     float: right;
     background-color: rgb(24, 139, 233);
+}
+
+#imagem_john{
+    display: flex;
+    height: 400px;
+    margin-top: 50px;
 }
