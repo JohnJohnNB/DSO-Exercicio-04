@@ -46,6 +46,7 @@ body{
     display: flex;
     height: 400px;
     margin-top: 50px;
+    width: 300px;
 }
 
 #contador{
