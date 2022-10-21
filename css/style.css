@@ -50,6 +50,7 @@ body{
 #john-face {
     border-radius: 150px;
     width: 300px;
+    cursor: pointer;
 }
 
 #container-imagem #john-face:active {
