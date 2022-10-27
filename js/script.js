@@ -9,8 +9,8 @@ function incrementar_contador(){
 
 // Metodo para Comprar o autoclick
 function BuyAutoClick(){
-    if (contador >= 12){
-        contador -= 12
+    if (contador >= (autoclicker_count+1)*12){
+        contador = contador - ((autoclicker_count+1)*12)
         autoclicker_count += 1
     }
     Update()
