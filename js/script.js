@@ -23,8 +23,10 @@ function Timer(){
 }
 setInterval(Timer, 1000)
 
-//Metodo para atualizar o contador a cada incremento de cookies ou alguma ação
+//Metodo para atualizar as informações contidas a cada ação ou algum incremento
 function Update(){
+    document.getElementById("comprar_autoclick").textContent = "Comprar Autoclick -> " + ((autoclicker_count+1)*12)
     document.getElementById("contador_autoclick").textContent = "Você tem "+ autoclicker_count + " AutoClickers" 
     document.getElementById("contador").textContent = contador + " johns"
+    document.getElementById("John_per/second").textContent = "Você está ganhando " + autoclicker_count + " johns por segundo"
 }
