@@ -1,28 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-@keyframes bounce {
-    0%, 20%, 60%, 100%{
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    40% {
-        -webkit-transform: translateY(-20px);
-        transform: translateY(-20px);
-    }
-
-    80% {
-        -webkit-transform: translateY(-10px);
-        transform: translateY(-10px);
-    }
-}
-
-.efeito:hover{
-    animation: bounce 1s;
-}
+/* FORMATAÇÕES GERAIS */
 
 body{
-    background-color: gray;
+    background: rgba(229,194,130,255);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 * {
@@ -32,35 +14,58 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-#menu-h{
-    background-color: rgb(37, 37, 39);
-}
-
-#menu-h ul {
-    max-width: 800px;
-    list-style: none;
-    padding: 0;
-}
-
-#menu-h ul li {
-    display: inline;
-}
-
-#menu-h ul li a {
-    color: #FFF;
-    padding: 20px;
-    display: inline-block;
+a {
     text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* CLASSE PARA ANIMAÇÃO DE GRADIENTE DO BACKGROUND */
+
+.gradient {
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg, rgb(253, 203, 104), rgb(209, 129, 9));
+    background-size: 150% 200%;
+    animation: colors 15s ease infinite;
+}
+
+/* EFEITO BOUNCE IMAGEM PRINCIPAL */
+
+.efeito:hover{
+    animation: bounce 1s;
+}
+
+/* ESTILO DA BARRA DE NAVEGAÇÃO */
+
+#topo {
+    display: flex;
+    justify-content: center;
+    background: rgb(161, 107, 25);
+    height: 70px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#topo ul {
+    display: flex;
+    align-items: center;
+}
+
+#topo ul li a {
+    color: rgb(95, 65, 21);
+    padding: 20px 40px;
     transition: background .4s;
+    border-left: 1px solid rgb(145, 98, 29);
 }
 
-#menu-h ul li a:hover {
-    background-color: rgb(24, 139, 233);
-}
-
-#menu-h ul li:last-child a {
-    float: right;
-    background-color: rgb(24, 139, 233);
+#topo ul li a:hover {
+    background-color: rgb(187, 133, 51);
 }
 
 #container-imagem {
@@ -83,9 +88,42 @@ body{
     display: flex;  
     font-size: medium;
     width: 200px;
-    background-color: aqua;
+    background-color: rgb(196, 127, 25);
     text-align: center;
     justify-content: center;
     padding: 15px;
     border-radius: 10px;
+}
+
+/* ANIMAÇÃO BOUNCE*/
+
+@keyframes bounce {
+    0%, 20%, 60%, 100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+/* ANIMAÇÃO GRADIENTE*/
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
