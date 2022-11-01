@@ -28,5 +28,5 @@ function Update(){
     document.getElementById("comprar_autoclick").textContent = "Comprar Autoclick -> " + ((autoclicker_count+1)*12)
     document.getElementById("contador_autoclick").textContent = "Você tem "+ autoclicker_count + " AutoClickers" 
     document.getElementById("contador").textContent = contador + " johns"
-    document.getElementById("John_per/second").textContent = "Você está ganhando " + autoclicker_count + " johns por segundo"
+    document.getElementById("john_por_segundo").textContent = autoclicker_count + " por segundo"
 }

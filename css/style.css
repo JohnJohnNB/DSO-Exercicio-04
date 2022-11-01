@@ -95,6 +95,17 @@ ul {
     border-radius: 10px;
 }
 
+#john_por_segundo{
+    display: flex;  
+    background-color: rgb(196, 127, 25);
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 /* ANIMAÇÃO BOUNCE*/
 
 @keyframes bounce {
