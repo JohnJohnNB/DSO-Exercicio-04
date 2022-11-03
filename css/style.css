@@ -138,3 +138,52 @@ ul {
         background-position: 0% 50%;
     }
 }
+
+/* Coluna Upgrades */
+
+#coluna_upgrades {
+    background-color: rgb(234, 234, 234);
+    border: groove purple 3px ;
+    width: 30%;
+    margin-left: 70px;
+    margin-top: -400px;
+    border-radius: 10px;
+    padding: 20px
+}
+
+/* modificar todas as divs de classe dos upgrades  dentro da div "coluna_upgrades" */
+
+.upgrades {
+    cursor: pointer;
+    display: flex;
+}
+
+/* modificar todos os ícones dos upgrades */
+
+.icones {
+    width: 20%;
+}
+
+/* modificar todos os nomes de upgrades */
+
+.nome_upgrade {
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke: 1px black;
+    font-size: 30px;
+    margin-left: 10px;
+
+}
+
+/* Modificar o número necessário para adquirir certo upgrade */
+
+#comprar_autoclick {
+    color: red;
+}
+
+/* linha que separa os upgrades */
+
+.linha_separacao {
+    background-color: black;
+    height: 1px;
+}

@@ -40,10 +40,40 @@
         <p>0 por segundo</p>
     </div>    
 
-    <p id="comprar_autoclick">Comprar Autoclick -> 12 johns</p>
+    <!--Coloquei id e classe para conseguirmos mexer no css especifico deles (no style.css) -->
 
-    <button onclick="BuyAutoClick()">AutoClick</button>
+    <div id="coluna_upgrades">
+        <div class="upgrades" onclick="BuyAutoClick()">
 
-    <p id="contador_autoclick">Você tem 0 AutoClickers</p>
+            <img class="icones" src="img/clicker.png" alt="imagem_upgrade_autoclick">
+
+            <p class="nome_upgrade">Clicker Adicional</p> <br>
+            <p id="comprar_autoclick">12</p> 
+
+
+
+            <!-- <button onclick="BuyAutoClick()">Comprar</button> -->
+    
+            <p id="contador_autoclick">Você tem 0 AutoClickers</p>
+        </div>
+
+        <br>
+        <p class="linha_separacao"></p>
+        <br>
+        
+    <!-- aqui é um segundo possível powerup, só pra ter noção se as classes tão sendo usadas corretamente -->
+
+        <div class="upgrades" onclick="">
+
+            <img class="icones" src="" alt="">
+
+            <p class="nome_upgrade">nome powerup</p> <br>
+            <p id="">contador do powerup x</p> 
+
+            <p id="">Você tem 0 ???</p>
+        </div>
+
+    </div>
+
 </body>
 </html>
