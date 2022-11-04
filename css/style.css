@@ -154,7 +154,6 @@ ul {
 /* modificar todas as divs de classe dos upgrades  dentro da div "coluna_upgrades" */
 
 .upgrades {
-    cursor: pointer;
     display: flex;
 }
 
@@ -162,6 +161,7 @@ ul {
 
 .icones {
     width: 20%;
+    cursor: pointer;
 }
 
 /* modificar todos os nomes de upgrades */

@@ -43,17 +43,15 @@
     <!--Coloquei id e classe para conseguirmos mexer no css especifico deles (no style.css) -->
 
     <div id="coluna_upgrades">
-        <div class="upgrades" onclick="BuyAutoClick()">
+        <div class="upgrades">
 
-            <img class="icones" src="img/clicker.png" alt="imagem_upgrade_autoclick">
+            <img class="icones" onclick="BuyAutoClick()" src="img/clicker.png" alt="imagem_upgrade_autoclick">
 
             <p class="nome_upgrade">Clicker Adicional</p> <br>
-            <p id="comprar_autoclick">12</p> 
-
-
-
+             
             <!-- <button onclick="BuyAutoClick()">Comprar</button> -->
-    
+            <p id="comprar_autoclick">Preço: 12</p>
+
             <p id="contador_autoclick">Você tem 0 AutoClickers</p>
         </div>
 
@@ -61,16 +59,17 @@
         <p class="linha_separacao"></p>
         <br>
         
-    <!-- aqui é um segundo possível powerup, só pra ter noção se as classes tão sendo usadas corretamente -->
+    <!-- Upgrade farm -->
 
-        <div class="upgrades" onclick="">
+        <div class="upgrades">
 
-            <img class="icones" src="" alt="">
+            <img class="icones" src="img/farm.jpg" alt="imagem_fazenda" onclick="BuyFarm()">
 
-            <p class="nome_upgrade">nome powerup</p> <br>
-            <p id="">contador do powerup x</p> 
+            <p class="nome_upgrade">Farm</p> <br>
+            
+            <p id="contador_farm">Você tem 0 Farms</p> 
 
-            <p id="">Você tem 0 ???</p>
+            <p id="comprar_farm">Preço: 20</p>
         </div>
 
     </div>
