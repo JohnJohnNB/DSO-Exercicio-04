@@ -172,18 +172,10 @@ ul {
     -webkit-text-stroke: 1px black;
     font-size: 30px;
     margin-left: 10px;
-
 }
 
 /* Modificar o número necessário para adquirir certo upgrade */
 
 #comprar_autoclick {
     color: red;
-}
-
-/* linha que separa os upgrades */
-
-.linha_separacao {
-    background-color: black;
-    height: 1px;
 }

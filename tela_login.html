@@ -3,14 +3,50 @@
 <head>
     <title>John Clicker</title>
     <link rel="icon" type="image/x-icon" href="./img/john_face.png">
-    <link rel="stylesheet" type="text/css" href="./css/style_tela_login.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style_login.css">
     <script src="./js/script.js"></script>
 </head>
-<body>
-    <h1>Tela de login - Teste</h1>
-    <h4>Usúario:</h4>
-    <input type="text" id="usúario" onkeyup="habilitar_campo_senha()" placeholder="Name"></input>
-    <h4>Senha:</h4>
-    <input type="password" id="senha" placeholder="Password"></input>
+<body class="gradient">
+    
+    <div id="topo">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="">Suporte</a>
+            </li>
+            <li>
+                <a href="">Ranking</a>
+            </li>
+            <li>
+                <a href="">Mercado</a>
+            </li>
+            <li>
+                <a style="border-right: 1px solid rgb(145, 98, 29);" href="tela_login.html">Entrar</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="container-geral">
+        <div id="container-login">
+            <div id="cadastrar1">
+                <h1>Bem vindo!</h1>
+                <p>Se você já tem uma conta, logue aqui.</p>
+                <input type="button" value="Log in">
+            </div>
+            <div id="login1">
+                <h1>Criar conta</h1>
+                <div class="inputs">
+                    <input placeholder="Nome" type="text" name="" id="" class="campos">
+                    <input placeholder="Email" type="text" name="" id="" class="campos">
+                    <input placeholder="Senha" type="password" name="" id="" class="campos">
+                    <input type="button" value="Cadastrar" class="botao-cadastrar">
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

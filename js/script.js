@@ -28,7 +28,7 @@ function BuyFarm(){
 
 //Metodo para a cada 1 segundo incrementar um cookie
 function Timer(){
-    contador = contador + autoclicker_count + (farm_count+1)
+    contador = contador + autoclicker_count + (farm_count)
     Update()
 }
 setInterval(Timer, 1000)
