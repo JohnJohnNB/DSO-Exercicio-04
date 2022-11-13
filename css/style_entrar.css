@@ -1,0 +1,97 @@
+
+#container-geral {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+#container-login {
+    border-radius: 30px;
+    height: 550px;
+    display: flex;
+}
+
+#cadastrar1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    background: rgba(88,175,156,255);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#cadastrar1 > h1 {
+    color: rgb(240, 240, 240);
+}
+
+#cadastrar1 > p {
+    color: rgb(228, 228, 228);
+    font-size: 15px;
+    font-weight: 100;
+}
+
+#cadastrar1 > a {
+    color: white;
+    margin-top: 10px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+#cadastrar1 > a:hover {
+    background-color: rgb(255, 255, 255);
+    color:black;
+}
+
+#login1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    background: #FFFF;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#login1 > h1 {
+    color: rgba(88,160,156,255);
+    margin-bottom: 10px;
+}
+
+#login1 > div.inputs > input.campos {
+    margin-bottom: 5px;
+    width: 220px;
+    padding: 5px;
+    border: none;
+    background: rgb(238, 238, 238);
+}
+
+#login1 > div.inputs > input.botao-cadastrar {
+    color: white;
+    margin-top: 10px;
+    width: 220px;
+    height: 35px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(84, 209, 182);
+    cursor: pointer;
+}
+
+/* animação do botão de cadastrar */
+
+#login1 > div.inputs > input.botao-cadastrar:active {
+    transform: scale(1);
+    box-shadow: 3px 2px 22px 1px rgba(15, 152, 177, 0.884);
+}
+/*  */
+
+#login1 > div.inputs {
+    display: flex;
+    flex-direction: column;
+}

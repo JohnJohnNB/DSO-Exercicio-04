@@ -21,7 +21,7 @@ function BuyAutoClick(){
 function BuyFarm(){
     if (contador >= (farm_count+1)*20){
         contador = contador - ((farm_count+1)*20)
-        farm_count += 1
+        farm_count += 5
     }
     Update()
 }
@@ -38,7 +38,7 @@ function Update(){
     document.getElementById("comprar_autoclick").textContent = "Preço:" + ((autoclicker_count+1)*12)
     document.getElementById("contador_autoclick").textContent = "Você tem "+ autoclicker_count + " AutoClickers" 
     document.getElementById("comprar_farm").textContent = "Preço:" + ((farm_count+1)*20)
-    document.getElementById("contador_farm").textContent = "Você tem " + farm_count + " Farms"
+    document.getElementById("contador_farm").textContent = "Você tem " + farm_count/5 + " Farms"
     document.getElementById("contador").textContent = contador + " johns"
     document.getElementById("john_por_segundo").textContent = autoclicker_count + farm_count + " por segundo"
 }
