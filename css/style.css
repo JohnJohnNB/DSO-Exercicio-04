@@ -29,8 +29,7 @@ ul {
 
 .gradient {
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: linear-gradient(45deg, rgb(253, 203, 104), rgb(209, 129, 9));
     background-size: 150% 200%;
     animation: colors 15s ease infinite;
@@ -49,7 +48,7 @@ ul {
     justify-content: center;
     background: rgb(161, 107, 25);
     height: 70px;
-    min-width: 950px;
+    min-width: 280px;
     font-weight: bold;
     font-size: 17px;
 }
@@ -57,6 +56,8 @@ ul {
 #topo ul {
     display: flex;
     align-items: center;
+    max-width: 850px;
+    min-width: 500px;
 }
 
 #topo ul li a {
@@ -70,14 +71,31 @@ ul {
     background-color: rgb(187, 133, 51);
 }
 
+#topo > #menu-bar-small-layout {
+    display: none;
+    transition: 0.3s;
+}
+
+/* CONTEUDO MAIN */
+
+main {
+    max-width: 100%;
+    min-width: 280px;
+}
+
+#container-clicker {
+    max-width: 300px;
+}
+
 #container-imagem {
     text-align: center;
     padding: 50px 0 20px 0;
+    width: 100%;
 }
 
 #john-face {
     border-radius: 150px;
-    width: 300px;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -89,7 +107,7 @@ ul {
 #contador{
     /* display: flex; */
     font-size: medium;
-    max-width: 200px;
+    width: 60%;
     background-color: rgb(196, 127, 25);
     text-align: center;
     /* justify-content: center; */
@@ -105,39 +123,21 @@ ul {
     font-size: 15px;
     text-align: center;
     /* justify-content: center; */
-    width: 200px;
+    width: 60%;
     border-radius: 10px;
     padding: 5px;
     box-shadow: 2px 2px 3px rgb(39, 39, 39);
 }
 
-/* CONTEUDO MAIN */
-
-main {
-    /* display: inline-flex;
-    align-items: center;
-    margin-left: 42.1875%; */
-    max-width: 100%;
-    min-width: 950px;
-    position: relative;
-}
-
-#container-clicker {
-}
-
 /* COLUNA UPGRADES */
 
 #coluna_upgrades {
-    position: absolute;
-    top: 0;
-    right: 0;
     background-color: rgb(234, 234, 234);
     box-shadow: 5px 5px 8px rgb(61, 61, 61);
-    width: 300px;
-    /* margin-left: 70px; */
-    /* margin-top: -400px;  */
     border-radius: 10px;
     padding: 20px;
+    margin-top: 30px;
+    width: 300px;
 }
 
 /* modificar todas as divs de classe dos upgrades  dentro da div "coluna_upgrades" */
@@ -145,12 +145,14 @@ main {
 .upgrades {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 /* modificar todos os ícones dos upgrades */
 
 .icones {
     cursor: pointer;
+    width: 100%;
 }
 
 /* modificar todos os nomes de upgrades */
@@ -160,7 +162,6 @@ main {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     -webkit-text-stroke: 1px black;
     font-size: 30px;
-    /* margin-left: 10px; */
 }
 
 /* Modificar o número necessário para adquirir certo upgrade */
@@ -200,4 +201,32 @@ main {
     100% {
         background-position: 0% 50%;
     }
+}
+
+@media only screen and (max-width: 850px) {
+    #topo ul {
+        display: none;
+    }
+
+    #menu-bar-small-layout {
+        display: block !important;
+        align-self: center;
+        margin-left: 15px;
+    }
+
+    #menu-bar-small-layout:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+  }
+
+@media only screen and (max-width: 380px) {
+    #container-clicker {
+        width: 80%;
+    }
+
+    #coluna_upgrades {
+        width: 80%;
+    }
+    
 }
