@@ -5,7 +5,6 @@
 body{
     background: rgba(229,194,130,255);
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-
 }
 
 * {
@@ -30,9 +29,11 @@ ul {
 .gradient {
     justify-content: center;
     width: 100%;
-    background: linear-gradient(45deg, rgb(253, 203, 104), rgb(209, 129, 9));
+    height:100%;
+    background: linear-gradient(45deg, rgb(253, 203, 104), rgb(209, 129, 9)) no-repeat;
     background-size: 150% 200%;
     animation: colors 15s ease infinite;
+    background-attachment: fixed;
 }
 
 /* EFEITO BOUNCE IMAGEM PRINCIPAL */

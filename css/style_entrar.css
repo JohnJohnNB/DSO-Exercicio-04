@@ -1,13 +1,18 @@
+body#tela_entrar {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
 
 #container-geral {
-    display: flex;
-    height: 100%;
-    align-items: center;
+    width: 100%;
+    min-width: 320px;
+    height: 550px;
 }
 
 #container-login {
-    border-radius: 30px;
-    height: 550px;
+    height: 100%;
+    width: 100%;
     display: flex;
 }
 
@@ -95,3 +100,43 @@
     display: flex;
     flex-direction: column;
 }
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+
+
+@media only screen and (max-width: 670px) {
+
+    #container-geral {
+        min-width: 320px !important;
+        height: 550px;
+    }
+
+    #container-login {
+        height: 100%;
+        display: grid;
+    }
+
+    #cadastrar1 {
+        width: 100% !important;
+        border-radius: 20px;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+
+    }
+
+    #login1 {
+        width: 100% !important;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+
+  }
+
+  @media only screen and (max-width: 320px) {
+
+    #container-login {
+        width: 90%;
+    }
+
+  }
