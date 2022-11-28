@@ -1,0 +1,61 @@
+
+body#tela_login {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container-pagina-logar {
+    text-align: center;
+    height: 100%;
+    max-width: 400px;
+    min-width: 280px;
+    border-radius: 25px;
+    padding: 15px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+#container-pagina-logar > div#caixa-dados > h1 {
+    color:rgba(88,160,156,255);
+    margin-bottom: 10px;
+}
+
+/* #caixa-dados {
+    margin:auto;
+} */
+
+#container-pagina-logar > div#caixa-dados > div.inputs > input.campos {
+    margin-bottom: 5px;
+    width: 220px;
+    padding: 5px;
+    border: none;
+    background: rgb(238, 238, 238);
+}
+
+#container-pagina-logar > div#caixa-dados > div.inputs > input.botao-logar {
+    color: white;
+    margin-top: 10px;
+    width: 220px;
+    height: 35px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(84, 209, 182);
+    cursor: pointer;
+}
+
+/* animação do botão de logar */
+
+#container-pagina-logar > div#caixa-dados > div.inputs > input.botao-logar:active {
+    transform: scale(1);
+    box-shadow: 3px 2px 22px 1px rgba(15, 152, 177, 0.884);
+}
+
+@media only screen and (max-width: 340px) {
+
+    #container-pagina-logar {
+        width: 80%;
+    }
+
+  }

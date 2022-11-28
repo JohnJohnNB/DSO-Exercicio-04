@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.caixa_de_texto{
+   display: block;
+   text-align: center;
+   margin-top: 30px;
+}

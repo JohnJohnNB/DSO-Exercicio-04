@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* FORMATAÇÕES GERAIS */
+
+body{
+    background: rgba(229,194,130,255);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* CLASSE PARA ANIMAÇÃO DE GRADIENTE DO BACKGROUND */
+
+.gradient {
+    justify-content: center;
+    width: 100%;
+    height:100%;
+    background: linear-gradient(45deg, rgb(253, 203, 104), rgb(209, 129, 9)) no-repeat;
+    background-size: 150% 200%;
+    animation: colors 15s ease infinite;
+    background-attachment: fixed;
+}
+
+/* EFEITO BOUNCE IMAGEM PRINCIPAL */
+
+.efeito:hover{
+    animation: bounce 1s;
+}
+
+/* ESTILO DA BARRA DE NAVEGAÇÃO */
+
+#topo {
+    display: flex;
+    justify-content: center;
+    background: rgb(161, 107, 25);
+    height: 70px;
+    min-width: 280px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#topo ul {
+    display: flex;
+    align-items: center;
+    max-width: 850px;
+    min-width: 500px;
+}
+
+#topo ul li a {
+    color: rgb(95, 65, 21);
+    padding: 20px 40px;
+    transition: background .4s;
+    border-left: 1px solid rgb(145, 98, 29);
+}
+
+#topo ul li a:hover {
+    background-color: rgb(187, 133, 51);
+}
+
+#topo > #menu-bar-small-layout {
+    display: none;
+    transition: 0.3s;
+}
+
+/* CONTEUDO MAIN */
+
+main {
+    max-width: 100%;
+    min-width: 280px;
+}
+
+#container-clicker {
+    max-width: 300px;
+}
+
+#container-imagem {
+    text-align: center;
+    padding: 50px 0 20px 0;
+    width: 100%;
+}
+
+#john-face {
+    border-radius: 150px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#container-imagem #john-face:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#contador{
+    /* display: flex; */
+    font-size: medium;
+    width: 60%;
+    background-color: rgb(196, 127, 25);
+    text-align: center;
+    /* justify-content: center; */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 6px rgb(39, 39, 39);
+}
+
+#john_por_segundo{
+    /* display: flex; */
+    background-color: rgb(209, 141, 40);
+    font-size: 15px;
+    text-align: center;
+    /* justify-content: center; */
+    width: 60%;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 2px 2px 3px rgb(39, 39, 39);
+}
+
+/* COLUNA UPGRADES */
+
+#coluna_upgrades {
+    background-color: rgb(234, 234, 234);
+    box-shadow: 5px 5px 8px rgb(61, 61, 61);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    width: 300px;
+}
+
+/* modificar todas as divs de classe dos upgrades  dentro da div "coluna_upgrades" */
+
+.upgrades {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* modificar todos os ícones dos upgrades */
+
+.icones {
+    cursor: pointer;
+    width: 100%;
+}
+
+/* modificar todos os nomes de upgrades */
+
+.nome_upgrade {
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke: 1px black;
+    font-size: 30px;
+}
+
+/* Modificar o número necessário para adquirir certo upgrade */
+
+.preco_upgrade {
+    color: red;
+}
+
+/* ANIMAÇÃO BOUNCE*/
+
+@keyframes bounce {
+    0%, 20%, 60%, 100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+/* ANIMAÇÃO GRADIENTE*/
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #topo ul {
+        display: none;
+    }
+
+    #menu-bar-small-layout {
+        display: block !important;
+        align-self: center;
+        margin-left: 15px;
+    }
+
+    #menu-bar-small-layout:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+  }
+
+@media only screen and (max-width: 380px) {
+    #container-clicker {
+        width: 80%;
+    }
+
+    #coluna_upgrades {
+        width: 80%;
+    }
+    
+}
