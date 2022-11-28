@@ -3,8 +3,9 @@ const app = express()
 const path = require('path')
 const router = express.Router()
 
+
 router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'/frontend/index.html'))
+    res.sendFile(path.join(__dirname+'/frontend/index.html'))  
 })
 
 router.get('/index.html', function(req, res){
@@ -21,10 +22,12 @@ router.get('/tela_entrar.html', function(req, res){
 
 app.use('/', router)
 
-app.listen(process.env.port || 3000)
+app.listen(process.env.port || 3000, function(){
+    console.log("Servidor rodando!")
+})
 
 //Para subir localmente:
 //- Ir no diretório do projeto
 //- No console: node index.js
-
+// acessar no navegador localhost:3000
 
