@@ -30,6 +30,7 @@
     </div> -->
     
     <main class="main-entrar">
+        <form action="/usuarios/novo" method="POST">
         <div id="container-geral">
             <div id="container-login">
                 <div id="cadastrar1">
@@ -40,14 +41,15 @@
                 <div id="login1">
                     <h1>Criar conta</h1>
                     <div class="inputs">
-                        <input placeholder="Nome" type="text" name="" id="" class="campos">
-                        <input placeholder="Email" type="text" name="" id="" class="campos">
-                        <input placeholder="Senha" type="password" name="" id="" class="campos">
-                        <input type="button" value="Cadastrar" class="botao-cadastrar">
+                        <input placeholder="Nome" type="text" name="nome" id="" class="campos">
+                        <input placeholder="Email" type="text" name="email" id="" class="campos">
+                        <input placeholder="Senha" type="password" name="senha" id="" class="campos">
+                        <button type="submit" class="botao-cadastrar" value="Cadastrar">Cadastrar</button>
                     </div>
                 </div>
             </div>
         </div>
+        </form>
     </main>
 
 </body>

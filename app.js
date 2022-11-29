@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const app = express()
 const path = require('path')
 const mongoose = require('mongoose')
+require(path.join(__dirname+'/frontend/model/usuario.js'))
+const Usuario = mongoose.model("usuarios")
 
 //Configurações
     //Body Parser
@@ -28,20 +30,36 @@ const mongoose = require('mongoose')
         res.sendFile(path.join(__dirname+'/frontend/tela_suporte.html'))
     })
     
+    app.get('/tela_login.html', function(req, res){
+        res.sendFile(path.join(__dirname+'/frontend/tela_login.html'))
+    })
+
     app.get('/tela_entrar.html', function(req, res){
         res.sendFile(path.join(__dirname+'/frontend/tela_entrar.html'))
+    })
+    app.post('/usuarios/novo', function(req, res){
+        const novoUsuario = {
+            nome: req.body.nome,
+            email: req.body.email,
+            senha: req.body.senha
+        }
+
+        new Usuario(novoUsuario).save().then(() => {
+            console.log('Usuario salvo com sucesso')
+        }).catch((err) =>{
+            console.log('Ocorreu um erro ao salvar o usuario'+ err)
+        })
     })
 
 //MongoDB
     mongoose.Promise = global.Promise
     mongoose.connect("mongodb://localhost/JohnClickerDB", {
-        useMongoClient: true
+        useNewUrlParser: true
     }).then(() => {
         console.log("MongoDB Conectado!")
     }).catch((err) => {
         console.log("Houve um erro ao se conectar ao mongoDB"+err)
     })
-
 
 const PORT = 3000
 app.listen(PORT, function(){
