@@ -20,24 +20,24 @@ const Usuario = mongoose.model("usuarios")
 
 //Rotas
     app.get('/',(req,res) => {
-        res.sendFile(path.join(__dirname+'/frontend/index.html'))
+        res.sendFile(path.join(__dirname+'/frontend/view/index.html'))
     })
     app.get('/index.html', function(req, res){
-        res.sendFile(path.join(__dirname+'/frontend/index.html'))  
+        res.sendFile(path.join(__dirname+'/frontend/view/index.html'))  
     })
     
     app.get('/tela_suporte.html', function(req, res){
-        res.sendFile(path.join(__dirname+'/frontend/tela_suporte.html'))
+        res.sendFile(path.join(__dirname+'/frontend/view/tela_suporte.html'))
     })
     
     app.get('/tela_login.html', function(req, res){
-        res.sendFile(path.join(__dirname+'/frontend/tela_login.html'))
+        res.sendFile(path.join(__dirname+'/frontend/view/tela_login.html'))
     })
 
     app.get('/tela_entrar.html', function(req, res){
-        res.sendFile(path.join(__dirname+'/frontend/tela_entrar.html'))
+        res.sendFile(path.join(__dirname+'/frontend/view/tela_entrar.html'))
     })
-    app.post('/usuarios/novo', function(req, res){
+    app.post('/usuarios/cadastrar', function(req, res){
         const novoUsuario = {
             nome: req.body.nome,
             email: req.body.email,
@@ -57,6 +57,20 @@ const Usuario = mongoose.model("usuarios")
             num_johns: req.body.num_johns,
             num_autoclicker: req.body.num_autoclicker,
             num_farm: req.body.num_farm
+        }
+
+        new Usuario(novoUsuario).save().then(() => {
+            console.log('Usuario salvo com sucesso')
+        }).catch((err) =>{
+            console.log('Ocorreu um erro ao salvar o usuario'+ err)
+        })
+    })
+
+    //Ele está criando um usúario novo por enquanto ao invés de autenticar o usúario
+    app.post('/usuarios/logar', function(req, res){
+        const novoUsuario = {
+            email: req.body.email,
+            senha: req.body.senha,
         }
 
         new Usuario(novoUsuario).save().then(() => {
