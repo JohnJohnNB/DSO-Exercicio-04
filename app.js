@@ -51,6 +51,21 @@ const Usuario = mongoose.model("usuarios")
         })
     })
 
+    //Ele está criando um usúario novo por enquanto ao invés de atualizar o numero de johns daquele usuario
+    app.post('/usuarios/salvarjohns', function(req, res){
+        const novoUsuario = {
+            num_johns: req.body.num_johns,
+            num_autoclicker: req.body.num_autoclicker,
+            num_farm: req.body.num_farm
+        }
+
+        new Usuario(novoUsuario).save().then(() => {
+            console.log('Usuario salvo com sucesso')
+        }).catch((err) =>{
+            console.log('Ocorreu um erro ao salvar o usuario'+ err)
+        })
+    })
+
 //MongoDB
     mongoose.Promise = global.Promise
     mongoose.connect("mongodb://localhost/JohnClickerDB", {
@@ -69,9 +84,12 @@ app.listen(PORT, function(){
 //Para subir localmente:
 //- Ir no diretório do projeto
 //- No console: node app.js
-// acessar no navegador localhost:3000
+//- acessar no navegador localhost:3000
 
 //Para usar o mongoDB 
 //- mongod no console para se conectar ao servidor mongo
 //- mongo no console para entrar na linha de comando mongo 
-//- só usar os comandos como: show dbs, etc...
+//- show dbs -> para mostrar os bancos 
+//- use JohnClickerDB -> para entrar no banco do servidor
+//- show colletions -> para mostrar as tabelas 
+//- db.usuarios.find() -> para mostrar os usuarios registrados na tabela

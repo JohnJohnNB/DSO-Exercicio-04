@@ -41,4 +41,7 @@ function Update(){
     document.getElementById("contador_farm").textContent = "Você tem " + farm_count/5 + " Farms"
     document.getElementById("contador").textContent = contador + " johns"
     document.getElementById("john_por_segundo").textContent = autoclicker_count + farm_count + " por segundo"
+    document.getElementById("num_johns").setAttribute("value", contador)
+    document.getElementById("num_autoclicker").setAttribute("value", autoclicker_count)
+    document.getElementById("num_farm").setAttribute("value", farm_count/5)
 }

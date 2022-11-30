@@ -231,3 +231,11 @@ main {
     }
     
 }
+
+.input_invisivel{
+    display: none;
+}
+
+#botao_salvar_progresso{
+    display: flex;
+}
