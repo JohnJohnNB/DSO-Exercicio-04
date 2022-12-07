@@ -16,7 +16,7 @@ body#tela_login {
     box-sizing: border-box;
 }
 
-#container-pagina-logar > div#caixa-dados > h1 {
+#caixa-dados h1 {
     color:rgba(88,160,156,255);
     margin-bottom: 10px;
 }
@@ -25,7 +25,7 @@ body#tela_login {
     margin:auto;
 } */
 
-#container-pagina-logar > div#caixa-dados > div.inputs > input.campos {
+.inputs input.campos {
     margin-bottom: 5px;
     width: 220px;
     padding: 5px;
@@ -33,7 +33,7 @@ body#tela_login {
     background: rgb(238, 238, 238);
 }
 
-#container-pagina-logar > div#caixa-dados > div.inputs > input.botao-logar {
+#botao-logar {
     color: white;
     margin-top: 10px;
     width: 220px;
@@ -47,7 +47,7 @@ body#tela_login {
 
 /* animação do botão de logar */
 
-#container-pagina-logar > div#caixa-dados > div.inputs > input.botao-logar:active {
+#botao-logar:active {
     transform: scale(1);
     box-shadow: 3px 2px 22px 1px rgba(15, 152, 177, 0.884);
 }
