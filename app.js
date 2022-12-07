@@ -53,16 +53,18 @@ const Usuario = mongoose.model("usuarios")
 
     //Ele está criando um usúario novo por enquanto ao invés de atualizar o numero de johns daquele usuario
     app.post('/usuarios/salvarjohns', function(req, res){
-        const novoUsuario = {
+        const query = {
+            //aqi vai o identificador do usuario, pra buscar na query
+        }
+        const newEntry = {
             num_johns: req.body.num_johns,
             num_autoclicker: req.body.num_autoclicker,
             num_farm: req.body.num_farm
         }
-
-        new Usuario(novoUsuario).save().then(() => {
-            console.log('Usuario salvo com sucesso')
-        }).catch((err) =>{
-            console.log('Ocorreu um erro ao salvar o usuario'+ err)
+        Usuario.update(query, newEntry).save().then(() => {
+            console.log('Usuario atualizado com  sucesso')
+        }).catch((err) => {
+            console.log('Ocorreu um erro ao atualizar'+err)
         })
     })
 
