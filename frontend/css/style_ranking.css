@@ -1,0 +1,8 @@
+#titulo {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(145, 98, 29);
+  padding: 20px;
+  align-content: center;
+  border-radius: 5px;
+}

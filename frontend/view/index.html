@@ -1,13 +1,15 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
+
 <head>
     <title>John Clicker</title>
     <link rel="icon" type="image/x-icon" href="../img/john_face.png">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="../js/script.js"></script>
 </head>
+
 <body class="gradient">
-    
+
     <nav id="topo">
         <ul>
             <li>
@@ -38,60 +40,61 @@
             <div id="container-imagem">
                 <img id="john-face" class="efeito" src="../img/john_face.png" alt="imagem_principal" onclick="incrementar_contador()">
             </div>
-        
+
             <div id="contador">
                 <p>Johns</p>
             </div>
-        
+
             <div id="john_por_segundo">
                 <p>0 por segundo</p>
-            </div>   
+            </div>
         </div>
-         
-    
+
+
         <!--Coloquei id e classe para conseguirmos mexer no css especifico deles (no style.css) -->
-    
+
         <div id="coluna_upgrades">
             <div class="upgrades">
-    
+
                 <img class="icones" onclick="BuyAutoClick()" src="../img/autoclicker.png" alt="imagem_upgrade_autoclick">
-    
+
                 <!-- <p class="nome_upgrade">Autoclicker</p> <br> -->
-                 
+
                 <!-- <button onclick="BuyAutoClick()">Comprar</button> -->
                 <p class="preco_upgrade" id="comprar_autoclick">Preço: 12</p>
-    
+
                 <p id="contador_autoclick">Você tem 0 AutoClickers</p>
             </div>
-    
+
             <hr style="margin: 20px 0;">
-            
-        <!-- Upgrade farm -->
-    
+
+            <!-- Upgrade farm -->
+
             <div class="upgrades">
-    
+
                 <img style="margin-bottom: 16px;" class="icones" src="../img/farm2.png" alt="imagem_fazenda" onclick="BuyFarm()">
-    
+
                 <!-- <p class="nome_upgrade">Farm</p> <br> -->
-                
+
                 <p class="preco_upgrade" id="comprar_farm">Preço: 20</p>
-    
-                <p id="contador_farm">Você tem 0 Farms</p> 
-    
+
+                <p id="contador_farm">Você tem 0 Farms</p>
+
             </div>
-    
+
         </div>
-    
+
     </main>
-    
+
     <div>
         <form action="/usuarios/salvarjohns" method="POST">
-        <input id="num_johns" class="input_invisivel" name="num_johns" value="0">
-        <input id="num_autoclicker" class="input_invisivel" name="num_autoclicker" value="0">
-        <input id="num_farm" class="input_invisivel" name="num_farm" value="0">
-        <button type="submit" id="botao_salvar_progresso">Salvar Progesso</button>
+            <input id="num_johns" class="input_invisivel" name="num_johns" value="0">
+            <input id="num_autoclicker" class="input_invisivel" name="num_autoclicker" value="0">
+            <input id="num_farm" class="input_invisivel" name="num_farm" value="0">
+            <button type="submit" id="botao_salvar_progresso">Salvar Progesso</button>
         </form>
     </div>
 
 </body>
+
 </html>
