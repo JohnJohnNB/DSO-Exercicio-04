@@ -7,9 +7,12 @@
 
 #titulo {
   text-align: center;
-  background-color: rgb(145, 98, 29);
+  background-color: rgb(187, 134, 53);
   padding: 30px;
   border-radius: 5px;
+  border-color: rgb(145, 98, 29);
+  border-width: 5px;
+  border-style: solid;
   margin: 15px 500px;
 }
 
@@ -19,6 +22,9 @@
   margin: 0px 300px 30px 300px;
   padding: 40px 200px;
   border-radius: 5px;
+  border-color: rgb(187, 134, 53);
+  border-width: 5px;
+  border-style: solid;
   background-color: rgb(145, 98, 29);
 }
 
