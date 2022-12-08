@@ -1,0 +1,40 @@
+.caixa {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  gap: 0px;
+}
+
+#titulo {
+  text-align: center;
+  background-color: rgb(145, 98, 29);
+  padding: 30px;
+  border-radius: 5px;
+  margin: 15px 500px;
+}
+
+#ranking {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0px 300px 30px 300px;
+  padding: 40px 300px;
+  border-radius: 5px;
+  background-color: rgb(145, 98, 29);
+}
+
+.posicao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(187, 134, 53);
+  padding: 20px 800px 20px 20px;
+  margin: 10px;
+  border-radius: 7px;
+}
+
+span {
+  display: block;
+  position: relative;
+  align-items: right;
+  justify-content: end;
+  background-color: antiquewhite;
+}
