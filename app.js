@@ -9,6 +9,8 @@ require(path.join(__dirname+'/frontend/model/usuario.js'))
 const Usuario = mongoose.model("usuarios")
 const session = require('express-session')
 const flash = require('connect-flash')
+const passport = require('passport')
+require("./config/auth")(passport)
 
 //Configurações
     //Sessão
@@ -17,6 +19,9 @@ const flash = require('connect-flash')
             resave: true,
             saveUninitialized: true
         }))
+        app.use(passport.initialize())
+        app.use(passport.session())
+        app.use(flash())
     //Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
         app.use(bodyParser.json())
@@ -44,6 +49,10 @@ const flash = require('connect-flash')
 
     app.get('/tela_entrar.html', function(req, res){
         res.sendFile(path.join(__dirname+'/frontend/view/tela_entrar.html'))
+    })
+
+    app.get('/tela_ranking.html', function(req, res){
+        res.sendFile(path.join(__dirname+'/frontend/view/tela_ranking.html'))
     })
 
     app.post('/usuarios/cadastrar', function(req, res){
@@ -109,17 +118,12 @@ const flash = require('connect-flash')
     })
 
     //Ele está criando um usúario novo por enquanto ao invés de autenticar o usúario
-    app.post('/usuarios/logar', function(req, res){
-        const novoUsuario = {
-            email: req.body.email,
-            senha: req.body.senha,
-        }
-
-        new Usuario(novoUsuario).save().then(() => {
-            console.log('Usuario salvo com sucesso')
-        }).catch((err) =>{
-            console.log('Ocorreu um erro ao salvar o usuario'+ err)
-        })
+    app.post('/usuarios/logar', function(req, res, next){
+        passport.authenticate("local", {
+            successRedirect: "/index.html",
+            failureRedirect: "/tela_login.html"
+            //fazer as mensagens de erro 
+        })(req, res, next)
     })
 
 //MongoDB
