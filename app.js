@@ -22,6 +22,13 @@ require("./config/auth")(passport)
         app.use(passport.initialize())
         app.use(passport.session())
         app.use(flash())
+    //Middleware 
+        app.use((req,res,next) => {
+            res.locals.success_msg = req.flash("sucess_msg")
+            res.locals.error_msg = req.flash("error_msg")
+            res.locals.error = req.flash("error") //essa msg não tá sendo exibida ainda 
+            next()
+        })
     //Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
         app.use(bodyParser.json())
@@ -80,8 +87,9 @@ require("./config/auth")(passport)
         } else {
             Usuario.findOne({email: req.body.email}).then((usuario) => {
                 if(usuario){
+                    req.flash("error_msg", "Já existe um usuário cadastrado com esse email")
                     res.redirect("/tela_entrar.html")
-                    //precisamos tratar aqui pra que retorne uma mensagem para o usuario dizendo que já existe uma conta com esse email
+                    //exibir a menesagem de erro
                 } else {
                     const novoUsuario = new Usuario({
                         nome: req.body.nome,
@@ -92,11 +100,14 @@ require("./config/auth")(passport)
                     }).catch((err) => {
                         console.log("Ocorreu um erro ao salvar o usúario"+err)
                     })
+                    req.flash("success_msg", "Usuário logado com sucesso")
                     res.redirect("/index.html")
+                    //exibir a mensagem de sucesso
                 }
             }).catch((err) => {
+                req.flash("error_msg", "Houve um erro ao cadastrar")
                 res.redirect("/")
-                //mensagem aqui com erro  
+                //exibir a mensagem de erro  
             })
         }
     })
