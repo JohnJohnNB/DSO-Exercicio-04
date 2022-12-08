@@ -108,7 +108,7 @@ main {
 
 #contador {
   /* display: flex; */
-  font-size: medium;
+  font-size: 1.5rem;
   width: 60%;
   background-color: rgb(196, 127, 25);
   text-align: center;
@@ -122,7 +122,7 @@ main {
 #john_por_segundo {
   /* display: flex; */
   background-color: rgb(209, 141, 40);
-  font-size: 15px;
+  font-size: 1.5rem;
   text-align: center;
   /* justify-content: center; */
   width: 60%;
@@ -139,7 +139,7 @@ main {
   border-radius: 10px;
   padding: 20px;
   margin-top: 30px;
-  width: 300px;
+  max-width: 300px;
 }
 
 /* modificar todas as divs de classe dos upgrades  dentro da div "coluna_upgrades" */
@@ -215,6 +215,8 @@ main {
     display: none;
   }
 
+/* DROPDOWN MENU */
+
   .link {
     width: 30px;
     height: 30px;
@@ -245,6 +247,7 @@ main {
     pointer-events: none;
     transform: translateY(-10px);
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    z-index: 999;
   }
 
   .dropdown.active > .link + .dropdown-menu {
@@ -259,12 +262,33 @@ main {
 
   ul.mobile > li > a {
     display: block;
-    font-weight: 500;
+    font-weight: bolder;
     color: rgb(80, 64, 13);
-    padding: .1rem;
+    padding: 1rem;
     text-transform: uppercase;
     background-color: rgb(206, 134, 26);
   }
+
+  /* ELEMENTOS DO JOGO RESPONSIVIDADE */
+
+  #container-clicker {
+    max-width: 60vw;
+  }
+
+  #coluna_upgrades {
+    max-width: 60vw;
+    margin: 5rem auto;
+  }
+
+  #contador {
+    /* display: flex; */
+    font-size: 2rem;
+  }
+  
+  #john_por_segundo {
+    font-size: 2rem;
+  }
+
 
 }
 

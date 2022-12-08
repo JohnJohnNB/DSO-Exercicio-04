@@ -5,11 +5,12 @@
     <link rel="icon" type="image/x-icon" href="../img/john_face.png">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/style_suporte.css">
+    <script src="../js/script.js" defer></script>
 </head>
 <body class="gradient">
 
     <nav id="topo">
-        <ul>
+        <ul class="desktop">
             <li>
                 <a href="index.html">Home</a>
             </li>
@@ -26,10 +27,28 @@
                 <a style="border-right: 1px solid rgb(145, 98, 29);" href="tela_entrar.html">Entrar</a>
             </li>
         </ul>
-        <div id="menu-bar-small-layout">
-            <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="https://www.w3.org/2000/svg" class="IconSandwich" data-testid="drawerButton">
-                <path d="M0.75 0.5H29.25V3.66667H0.75V0.5ZM0.75 8.41667H29.25V11.5833H0.75V8.41667ZM0.75 16.3333H29.25V19.5H0.75V16.3333Z" fill="#fff"></path>
-            </svg>
+        <div class="dropdown" data-dropdown>
+            <button class="link" data-dropdown-button>
+            </button>
+            <div class="dropdown-menu">
+                <ul class="mobile">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#coluna_upgrades">Mercado</a>
+                    </li>
+                    <li>
+                        <a href="tela_ranking.html">Ranking</a>
+                    </li>
+                    <li>
+                        <a href="">Suporte</a>
+                    </li>
+                    <li>
+                        <a href="tela_entrar.html">Entrar</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
