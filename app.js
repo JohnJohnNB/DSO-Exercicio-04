@@ -40,7 +40,7 @@ require("./config/auth")(passport)
 
 //Rotas
     app.get('/',(req,res) => {
-        res.sendFile(path.join(__dirname+'/frontend/view/index.html'))
+        res.sendFile(path.join(__dirname+'/frontend/view/tela_entrar.html'))
     })
     app.get('/index.html', function(req, res){
         res.sendFile(path.join(__dirname+'/frontend/view/index.html'))  
@@ -101,7 +101,7 @@ require("./config/auth")(passport)
                         console.log("Ocorreu um erro ao salvar o usúario"+err)
                     })
                     req.flash("success_msg", "Usuário logado com sucesso")
-                    res.redirect("/index.html")
+                    res.redirect("/tela_login.html")
                     //exibir a mensagem de sucesso
                 }
             }).catch((err) => {
