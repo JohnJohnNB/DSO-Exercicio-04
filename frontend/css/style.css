@@ -211,6 +211,11 @@ main {
 /* RESPONSIVIDADE */
 
 @media only screen and (max-width: 1024px) {
+
+  #topo {
+    height: 100%;
+  }
+
   #topo ul.desktop {
     display: none;
   }
@@ -218,9 +223,11 @@ main {
 /* DROPDOWN MENU */
 
   .link {
-    width: 30px;
-    height: 30px;
-    background: url('../img/dropdown-icon.png') no-repeat;
+    width: 100px;
+    height: 100px;
+    background: url('../img/bars.png') no-repeat;
+    background-size: 100%;
+    background-position: center;
     border: none;
   }
 
@@ -238,6 +245,10 @@ main {
 
   .dropdown-menu {
     position: absolute;
+    min-height: 190px;
+    min-width: 100px;
+    height: 30vh;
+    width: 18vw;
     left: 0;
     top: calc(100% + .1rem);
     background-color: rgb(196, 127, 25);
@@ -256,12 +267,21 @@ main {
     pointer-events: auto;
   }
 
+  ul.mobile {
+    height: 100%;
+  }
+
   ul.mobile > li{
     padding: .30rem .15rem .30rem .15rem;
+    height: 20%;
   }
 
   ul.mobile > li > a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(100% + .25rem);
+    height: 100%;
     font-weight: bolder;
     color: rgb(80, 64, 13);
     padding: 1rem;
