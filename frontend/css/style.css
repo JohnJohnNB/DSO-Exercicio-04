@@ -55,25 +55,25 @@ ul {
   font-size: 17px;
 }
 
-#topo ul {
+#topo ul.desktop {
   display: flex;
   align-items: center;
   max-width: 850px;
   min-width: 500px;
 }
 
-#topo ul li a {
+#topo ul.desktop li a {
   color: rgb(95, 65, 21);
   padding: 20px 40px;
   transition: background 0.4s;
   border-left: 1px solid rgb(145, 98, 29);
 }
 
-#topo ul li a:hover {
+#topo ul.desktop li a:hover {
   background-color: rgb(187, 133, 51);
 }
 
-#topo > #menu-bar-small-layout {
+#topo > .dropdown {
   display: none;
   transition: 0.3s;
 }
@@ -108,7 +108,7 @@ main {
 
 #contador {
   /* display: flex; */
-  font-size: medium;
+  font-size: 1.5rem;
   width: 60%;
   background-color: rgb(196, 127, 25);
   text-align: center;
@@ -122,7 +122,7 @@ main {
 #john_por_segundo {
   /* display: flex; */
   background-color: rgb(209, 141, 40);
-  font-size: 15px;
+  font-size: 1.5rem;
   text-align: center;
   /* justify-content: center; */
   width: 60%;
@@ -139,7 +139,7 @@ main {
   border-radius: 10px;
   padding: 20px;
   margin-top: 30px;
-  width: 300px;
+  max-width: 300px;
 }
 
 /* modificar todas as divs de classe dos upgrades  dentro da div "coluna_upgrades" */
@@ -208,21 +208,88 @@ main {
   }
 }
 
-@media only screen and (max-width: 850px) {
-  #topo ul {
+/* RESPONSIVIDADE */
+
+@media only screen and (max-width: 1024px) {
+  #topo ul.desktop {
     display: none;
   }
 
-  #menu-bar-small-layout {
+/* DROPDOWN MENU */
+
+  .link {
+    width: 30px;
+    height: 30px;
+    background: url('../img/dropdown-icon.png') no-repeat;
+    border: none;
+  }
+
+  .dropdown.active > .link,
+  .link:hover {
+    color: black;
+  }
+
+  .dropdown {
     display: block !important;
+    position: relative;
     align-self: center;
     margin-left: 15px;
   }
 
-  #menu-bar-small-layout:hover {
-    cursor: pointer;
-    transform: scale(1.2);
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + .1rem);
+    background-color: rgb(196, 127, 25);
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    z-index: 999;
   }
+
+  .dropdown.active > .link + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  ul.mobile > li{
+    padding: .30rem .15rem .30rem .15rem;
+  }
+
+  ul.mobile > li > a {
+    display: block;
+    font-weight: bolder;
+    color: rgb(80, 64, 13);
+    padding: 1rem;
+    text-transform: uppercase;
+    background-color: rgb(206, 134, 26);
+  }
+
+  /* ELEMENTOS DO JOGO RESPONSIVIDADE */
+
+  #container-clicker {
+    max-width: 60vw;
+  }
+
+  #coluna_upgrades {
+    max-width: 60vw;
+    margin: 5rem auto;
+  }
+
+  #contador {
+    /* display: flex; */
+    font-size: 2rem;
+  }
+  
+  #john_por_segundo {
+    font-size: 2rem;
+  }
+
+
 }
 
 @media only screen and (max-width: 380px) {

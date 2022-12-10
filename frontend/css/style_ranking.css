@@ -7,9 +7,12 @@
 
 #titulo {
   text-align: center;
-  background-color: rgb(145, 98, 29);
+  background-color: rgb(187, 134, 53);
   padding: 30px;
   border-radius: 5px;
+  border-color: rgb(145, 98, 29);
+  border-width: 5px;
+  border-style: solid;
   margin: 15px 500px;
 }
 
@@ -17,24 +20,26 @@
   display: grid;
   grid-template-columns: 1fr;
   margin: 0px 300px 30px 300px;
-  padding: 40px 300px;
+  padding: 40px 200px;
   border-radius: 5px;
+  border-color: rgb(187, 134, 53);
+  border-width: 5px;
+  border-style: solid;
   background-color: rgb(145, 98, 29);
 }
 
 .posicao {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto minmax(5rem, 50rem) 7rem;
   background-color: rgb(187, 134, 53);
-  padding: 20px 800px 20px 20px;
+  padding: 20px 20px 20px 40px;
   margin: 10px;
   border-radius: 7px;
+  place-self: end;
 }
 
-span {
+.qnt_johns {
   display: block;
-  position: relative;
-  align-items: right;
-  justify-content: end;
-  background-color: antiquewhite;
+  grid-column: 3;
+  grid-row: 1;
 }
