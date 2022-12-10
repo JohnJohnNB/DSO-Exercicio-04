@@ -11,6 +11,14 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const passport = require('passport')
 require("./config/auth")(passport)
+function ehAutenticado(req, res, next){
+    if(req.isAuthenticated()){
+        return next()
+    }
+    req.flash("error_msg", "Você deve estar logado para entrar aqui") //exibir a mensagem
+    res.redirect("/")
+}
+
 
 //Configurações
     //Sessão
@@ -27,6 +35,7 @@ require("./config/auth")(passport)
             res.locals.success_msg = req.flash("sucess_msg")
             res.locals.error_msg = req.flash("error_msg")
             res.locals.error = req.flash("error") //essa msg não tá sendo exibida ainda 
+            res.locals.user = req.user || null //armazena os dados do usuário logado em uma varíavel global
             next()
         })
     //Body Parser
@@ -39,14 +48,14 @@ require("./config/auth")(passport)
         app.use(express.static(path.join(__dirname + '/public')))
 
 //Rotas
-    app.get('/',(req,res) => {
+    app.get('/', (req,res) => {
         res.sendFile(path.join(__dirname+'/frontend/view/tela_entrar.html'))
     })
-    app.get('/index.html', function(req, res){
+    app.get('/index.html', ehAutenticado, function(req, res){
         res.sendFile(path.join(__dirname+'/frontend/view/index.html'))  
     })
     
-    app.get('/tela_suporte.html', function(req, res){
+    app.get('/tela_suporte.html', ehAutenticado, function(req, res){
         res.sendFile(path.join(__dirname+'/frontend/view/tela_suporte.html'))
     })
     
@@ -54,11 +63,11 @@ require("./config/auth")(passport)
         res.sendFile(path.join(__dirname+'/frontend/view/tela_login.html'))
     })
 
-    app.get('/tela_entrar.html', function(req, res){
+    app.get('/tela_entrar.html', ehAutenticado, function(req, res){
         res.sendFile(path.join(__dirname+'/frontend/view/tela_entrar.html'))
     })
 
-    app.get('/tela_ranking.html', function(req, res){
+    app.get('/tela_ranking.html', ehAutenticado, function(req, res){
         res.sendFile(path.join(__dirname+'/frontend/view/tela_ranking.html'))
     })
 
@@ -151,6 +160,7 @@ const PORT = 3000
 app.listen(PORT, function(){
     console.log("Servidor rodando!")
 })
+
 
 //Para subir localmente:
 //- Ir no diretório do projeto
